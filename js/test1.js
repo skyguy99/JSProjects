@@ -1,4 +1,3 @@
-
 var word;
 
 function goToProject(){
@@ -9,5 +8,3 @@ function goToProject(){
     context.fillText(word,10,50);
 
 };
-
-

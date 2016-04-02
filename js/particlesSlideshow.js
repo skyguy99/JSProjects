@@ -36,7 +36,7 @@ var self = window;
 		 * List words.
 		 */
 		
-		words = [ 'circlesssss', 'ovals', 'drop', 'ribbon' ], //Change words HERE
+		words = [ 'circlesssss', 'ovals', 'drop', 'ribbon' ], //HERE!!!
 		
 		/*
 		 * List colors.
@@ -78,9 +78,20 @@ var self = window;
 				canvas.addEventListener('mousemove', onMouseMove, false);
 			}
 			
+			// Arrows
+			handleClick('bind', 'left');
+			handleClick('bind', 'right');
+			
 			window.onresize = onResize;
 			
 			createParticles();
+
+			// Arrows elements
+			left = document.querySelector('.ip-nav-left');
+			right = document.querySelector('.ip-nav-right');
+
+			// Show right arrow
+			right.classList.add('ip-nav-show');
 		
 		}
 		else {
@@ -205,6 +216,35 @@ var self = window;
 				
 	}
 	
+	/*
+	 * Handle click events for arrows.
+	 */
+	
+	function handleClick(action, type) {
+	
+		var direction = type === 'left' ? onLeftClick : onRightClick;
+	
+		switch(action) {
+		
+			case 'bind':
+			
+				document.querySelector('.ip-nav-' + type).addEventListener('touchstart', direction, false);
+				document.querySelector('.ip-nav-' + type).addEventListener('click', direction, false);
+				document.querySelector('.ip-nav-' + type).style.cursor = 'pointer';
+				break;
+				
+			case 'unbind':
+			
+				document.querySelector('.ip-nav-' + type).removeEventListener('touchstart', direction, false);
+				document.querySelector('.ip-nav-' + type).removeEventListener('click', direction, false);
+				document.querySelector('.ip-nav-' + type).style.cursor = 'default';
+				break;
+				
+			default: break;
+		
+		}
+	
+	}
 	
 	/*
 	 * Create particles.
@@ -332,7 +372,7 @@ var self = window;
 						y: height,
 						
 						orbit: randomBetween(1, 3),
-						angle: 0
+						angle: 
 							
 					});
 						
