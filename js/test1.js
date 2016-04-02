@@ -1,5 +1,6 @@
 
 var word;
+
 function goToProject(){
     word = document.getElementById("project").value;
     //window.location.href = "http://mysite.com/"+project;
@@ -8,3 +9,5 @@ function goToProject(){
     context.fillText(word,10,50);
 
 };
+
+
