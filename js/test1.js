@@ -5,6 +5,7 @@ function goToProject(){
     //window.location.href = "http://mysite.com/"+project;
 
     alert("Hello "+word);
-    context.fillText(word,10,50);
 
 };
+
+

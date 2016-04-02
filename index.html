@@ -22,6 +22,8 @@
         // ----------------------------------------
         // Particle
         // ----------------------------------------
+            
+          /*  
         function Particle( x, y, radius ) {
             this.init( x, y, radius );
         }
@@ -54,11 +56,24 @@
                 ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
                 ctx.fillStyle = this.color;
                 ctx.fill();
+                
             }
-        };
+        };*/
+            
+    
+    Sketch.create({
+
+    draw: function() {
+        this.font = "30px Arial";
+this.strokeText("Hello World",10,50);
+    }
+
+});    
         // ----------------------------------------
         // Example
         // ----------------------------------------
+            
+        /*    
         var MAX_PARTICLES = 280;
         var COLOURS = [ '#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423' ];
         var particles = [];
@@ -111,7 +126,7 @@
                   demo.spawn( touch.x, touch.y );
                 }
             }
-        };
+        };*/
         
         </script>
     </body>

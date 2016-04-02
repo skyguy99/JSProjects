@@ -3,10 +3,12 @@
 body {
     background-color: #292929;
     padding: 0vm;
+    overflow-x: hidden;
+    
 }
 #project {
     z-index: 2;
-    position: fixed; /* or absolute */
+    position: absolute; /* or absolute */
     background: #262626;
     border-top: none;
     border-left: none;
@@ -17,4 +19,10 @@ body {
     float: left;
     color: #1F1F1F;
     text-align: center;
+}
+#search {
+   text-align: center; 
+}
+canvas {
+    background: #cdcdcd;
 }
