@@ -69,9 +69,11 @@
             ctx.setup = function() {
             // Set off some initial particles.
             var i, x, y;
+            var testx = ctx.width * (random( 0, 1));
+            var testy = ctx.height * (random( 0, 1));
             for ( i = 0; i < 20; i++ ) {
-                x = ( ctx.width * 0.5 ) + random( -100, 100 );
-                y = ( ctx.height * 0.5 ) + random( -100, 100 );
+                x = testx+ random( -100, 100 );
+                y = testy + random( -100, 100 );
                 ctx.spawn( x, y );
             }
         };
@@ -89,15 +91,11 @@
             particle.vy = cos( theta ) * force;
             particles.push( particle );
         };
-
             //My drawing functions
 ctx.draw = function() {
     
     ctx.font = "30px Arial";
     ctx.strokeText("Hello World",10,50);
-    
-    /*ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0,0,150,75);*/
     
    ctx.globalCompositeOperation  = 'lighter';
             for ( var i = particles.length - 1; i >= 0; i-- ) {
@@ -110,8 +108,9 @@ ctx.draw = function() {
             var i, particle;
             for ( i = particles.length - 1; i >= 0; i-- ) {
                 particle = particles[i];
-                if ( particle.alive ) particle.move();
-                else pool.push( particles.splice( i, 1 )[0] );
+                /*if ( particle.alive ) particle.move();
+                else pool.push( particles.splice( i, 1 )[0] );*/
+                particle.move();
             }
         };
             
