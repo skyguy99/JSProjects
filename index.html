@@ -90,13 +90,14 @@
             particles.push( particle );
         };
 
+            //My drawing functions
 ctx.draw = function() {
     
     ctx.font = "30px Arial";
     ctx.strokeText("Hello World",10,50);
     
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0,0,150,75);
+    /*ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0,0,150,75);*/
     
    ctx.globalCompositeOperation  = 'lighter';
             for ( var i = particles.length - 1; i >= 0; i-- ) {
@@ -105,6 +106,16 @@ ctx.draw = function() {
     
     
 };
+            ctx.update = function() {
+            var i, particle;
+            for ( i = particles.length - 1; i >= 0; i-- ) {
+                particle = particles[i];
+                if ( particle.alive ) particle.move();
+                else pool.push( particles.splice( i, 1 )[0] );
+            }
+        };
+            
+            console.log(ctx.getImageData);
             
         // ----------------------------------------
         // Example
