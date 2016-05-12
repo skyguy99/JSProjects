@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<title>Skylar's JS Projects</title>
-	<link rel='stylesheet' type='text/css' href='../Astrum/css/loginsheet.css'/>
+	<link rel='stylesheet' type='text/css' href='stylesheet.css'/>
         
     <script src="js/three.js"></script>
 
@@ -18,7 +18,7 @@
 <?php
 echo '<div class="wrapper" style="background-color:lightgrey;">';
 echo '<div class="container">';
-echo '<h1 id="titleHead">Skylar</h1>';
+echo '<h1 id="titleHead">Skylar JS</h1>';
 //echo '<script src="testScene.js"></script>';
 echo '<div id ="planet"></div>';
 echo '</div>';
